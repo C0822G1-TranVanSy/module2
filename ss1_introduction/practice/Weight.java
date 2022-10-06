@@ -1,15 +1,17 @@
 package ss1_introduction.practice;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Weight {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
         double weight, height, bmi;
         System.out.println("Nhập cân nặng (kg): ");
-        weight = sc.nextDouble();
+        weight = scanner.nextDouble();
         System.out.println("Nhập chiều cao (m): ");
-        height = sc.nextDouble();
+        height = scanner.nextDouble();
         bmi = weight / Math.pow(height, 2);
         System.out.println("bmi");
 
