@@ -8,13 +8,13 @@ public class CountChar {
         System.out.print("Nhập chuỗi: ");
         String str = scanner.nextLine();
         System.out.print("Nhập 1 ký tự muốn kiểm tra: ");
-        char c = scanner.nextLine().charAt(0);
+        char character = scanner.nextLine().charAt(0);
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (c == str.charAt(i)) {
+            if (character == str.charAt(i)) {
                 count++;
             }
         }
-        System.out.printf("Số lần ký tự %c xuất hiện trong %s: %d", c, str, count);
+        System.out.printf("Số lần ký tự %c xuất hiện trong %s: %d", character, str, count);
     }
 }
