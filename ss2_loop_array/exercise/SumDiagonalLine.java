@@ -1,4 +1,4 @@
-package ss2_loop_array.exersice;
+package ss2_loop_array.exercise;
 
 import java.util.Arrays;
 
@@ -13,6 +13,7 @@ public class SumDiagonalLine {
                 }
             }
         }
+
         for (int[] ints : arr) {
             System.out.println(Arrays.toString(ints));
         }

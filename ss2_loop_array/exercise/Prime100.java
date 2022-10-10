@@ -1,4 +1,4 @@
-package ss2_loop_array.exersice;
+package ss2_loop_array.exercise;
 
 public class Prime100 {
     public static void main(String[] args) {

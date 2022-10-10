@@ -1,4 +1,4 @@
-package ss2_loop_array.exersice;
+package ss2_loop_array.exercise;
 
 import java.util.Scanner;
 
@@ -15,9 +15,9 @@ public class SumColumn {
                 System.out.println("Nhập lại số cột cho đúng");
             }
         } while (column > arr.length || column < 0);
+
         for (int[] ints : arr) {
             sum += ints[column];
-
         }
         System.out.print("Tổng của cột " + column + " là: " + sum);
     }
