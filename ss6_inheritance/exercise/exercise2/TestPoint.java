@@ -1,6 +1,6 @@
 package ss6_inheritance.exercise.exercise2;
 
-public class TestArray {
+public class TestPoint {
     public static void main(String[] args) {
         Point2D point2D = new Point2D();
         point2D.setXy(3,4);
