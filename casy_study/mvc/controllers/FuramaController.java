@@ -3,64 +3,43 @@ package casy_study.mvc.controllers;
 import java.util.Scanner;
 
 public class FuramaController {
-    int option;
-    Scanner scanner = new Scanner(System.in);
+    public static void displayMainMenu() {
 
-    public void displayMainMenu() {
 
+        int choice;
         do {
             System.out.println("1. Employee Management\n" +
                     "2. Customer Management\n" +
-                    "3. Facility Management \n" +
+                    "3. Facility Management\n" +
                     "4. Booking Management\n" +
                     "5. Promotion Management\n" +
                     "6. Exit");
-            System.out.println("Nhập lựa chọn trong menu: ");
-            option = Integer.parseInt(scanner.nextLine());
-            if (option > 6 || option < 1) {
-                System.out.println("Bạn đã nhập ngoài lựa chọn!!! Hãy chọn lại.");
-            }
+            System.out.println("Nhập lựa chọn trong MainMenu: ");
+            Scanner scanner = new Scanner(System.in);
+            choice = Integer.parseInt(scanner.nextLine());
 
-            switch (option) {
+            switch (choice) {
                 case 1:
-                    System.out.println("1 Display list employees\n" +
-                            "2 Add new employee\n" +
-                            "3 Delete employee\n" +
-                            "4 Edit employee\n" +
-                            "5 Return main menu");
-
-                    do {
-                        System.out.println("Nhập lựa chọn: ");
-                        option = Integer.parseInt(scanner.nextLine());
-                        if (option < 1 || option > 5) {
-                            System.out.println("Bạn đã nhập ngoài lựa chọn!!! Hãy chọn lại.");
-                        }
-                    } while (option != 5);
+                    EmployeeManagement.displayListEmployees();
                     break;
                 case 2:
-                    System.out.println("1. Display list customers\n" +
-                            "2. Add new customer\n" +
-                            "3. Edit customer\n" +
-                            "4. Return main menu");
+                    CustomerManagement.displayListCustomers();
                     break;
                 case 3:
-                    System.out.println("1 Display list facility\n" +
-                            "2 Add new facility\n" +
-                            "3 Display list facility maintenance\n" +
-                            "4 Return main menu");
+                    FacilityManagement.displayListFacility();
                     break;
                 case 4:
-                    System.out.println("1. Add new booking\n" +
-                            "2. Display list booking\n" +
-                            "3. Return main menu");
+                    BookingManagement.displayListBooking();
                     break;
                 case 5:
-                    System.out.println("1. Display list customers use service\n" +
-                            "2. Display list customers get voucher\n" +
-                            "3. Return main menu");
+                    PromotionManagement.displayListPromotion();
+                    break;
                 case 6:
-                    System.out.println(" ");
+                    System.out.println("EXIT");
+                    System.exit(0);
+                default:
+                    System.out.println("Bạn đã nhập ngoài lựa chọn!!! Hãy chọn lại.");
             }
-        } while (option != 6);
+        } while (true);
     }
 }

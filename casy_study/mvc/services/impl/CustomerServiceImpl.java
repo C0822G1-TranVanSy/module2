@@ -1,4 +1,4 @@
-package casy_study.mvc.service.impl;
+package casy_study.mvc.services.impl;
 
 public class CustomerServiceImpl {
 }

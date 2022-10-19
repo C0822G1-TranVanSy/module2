@@ -1,4 +1,8 @@
 package casy_study.mvc.models;
 
-public class Villa extends Facility{
+public class Villa {
+    private String standardRoom;
+    private double swimmingPoolArea;
+
+
 }

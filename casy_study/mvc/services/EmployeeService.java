@@ -1,4 +1,5 @@
-package casy_study.mvc.service;
+package casy_study.mvc.services;
 
 public interface EmployeeService {
+
 }
