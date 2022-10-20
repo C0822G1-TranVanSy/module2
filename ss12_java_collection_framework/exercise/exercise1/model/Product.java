@@ -29,11 +29,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public double getCost() {
+    public double getPrice() {
         return price;
     }
 
-    public void setCost(double cost) {
+    public void setPrice(double cost) {
         this.price = cost;
     }
 
@@ -54,11 +54,13 @@ public class Product {
                 '}';
     }
 
+
     public static ArrayList<Product> products = new ArrayList<>();
+
     static {
-        Product product1 = new Product("Cuong", 1000,1);
-        Product product2 = new Product("Sy", 2000,2);
-        Product product3 = new Product("Minh", 1500,3);
+        Product product1 = new Product("Cuong", 1000, 1);
+        Product product2 = new Product("Sy", 2000, 2);
+        Product product3 = new Product("Minh", 1500, 3);
         products.add(product1);
         products.add(product2);
         products.add(product3);

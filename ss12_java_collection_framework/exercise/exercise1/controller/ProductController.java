@@ -3,6 +3,8 @@ package ss12_java_collection_framework.exercise.exercise1.controller;
 import ss12_java_collection_framework.exercise.exercise1.model.Product;
 import ss12_java_collection_framework.exercise.exercise1.service.ProductService;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class ProductController {
@@ -24,7 +26,7 @@ public class ProductController {
                     ProductService.addProduct();
                     break;
                 case 2:
-                    System.out.println("Sửa thông tin theo id");
+                    ProductService.editProduct();
                     break;
                 case 3:
                     ProductService.removeProduct();
@@ -33,10 +35,11 @@ public class ProductController {
                     ProductService.displayListProduct();
                     break;
                 case 5:
-                    System.out.println("Tìm kiếm sản phẩm theo tên");
+                    ProductService.searchProduct();
                     break;
                 case 6:
-                    System.out.println("Sắp xếp sản phâm tăng dần theo giá");
+                    Product.products.sort(Comparator.comparing(Product::getPrice));
+                    ProductService.displayListProduct();
                     break;
                 case 7:
                     System.exit(0);
@@ -44,8 +47,5 @@ public class ProductController {
                     System.out.println("Bạn đã nhập ngoài lựa chọn!!! Hãy chọn lại.");
             }
         } while (true);
-
     }
-
-
 }
