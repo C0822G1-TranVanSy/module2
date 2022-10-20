@@ -45,7 +45,7 @@ public class ProductService {
         if (deletedIndex != -1) {
             Product.products.remove(deletedIndex);
         } else {
-            System.out.println("Không tìm thấy id này. ");
+            System.out.println("Không tìm thấy id này!!!");
         }
         displayListProduct();
     }
@@ -57,15 +57,21 @@ public class ProductService {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập id cần chỉnh sửa thông tin: ");
         int id = Integer.parseInt(scanner.nextLine());
+        boolean check = false;
         for (int i = 0; i < Product.products.size(); i++) {
             if (Product.products.get(i).getId() == id) {
                 System.out.println("Nhập tên cần chỉnh sửa:  ");
                 Product.products.get(i).setProductName(scanner.nextLine());
                 System.out.println("Nhập giá tiền cần chỉnh sửa:  ");
                 Product.products.get(i).setPrice(Integer.parseInt(scanner.nextLine()));
+                check = true;
             }
         }
-        displayListProduct();
+        if(!check){
+            System.out.println("Không tìm thấy id này!!!");
+        }else {
+            displayListProduct();
+        }
     }
 
     /**
@@ -75,10 +81,15 @@ public class ProductService {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập tên Product cần tìm kiếm: ");
         String name = scanner.nextLine();
+        boolean check = false;
         for (int i = 0; i < Product.products.size(); i++) {
             if (Product.products.get(i).getProductName().equals(name)) {
                 System.out.println(Product.products.get(i));
+                check = true;
             }
+        }
+        if(!check){
+            System.out.println("không tìm thấy tên sản phẩm này");
         }
     }
 
