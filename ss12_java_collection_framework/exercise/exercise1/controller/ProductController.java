@@ -40,6 +40,7 @@ public class ProductController {
                     break;
                 case 6:
                     Product.products.sort(Comparator.comparing(Product::getPrice));
+
                     ProductService.displayListProduct();
                     break;
                 case 7:

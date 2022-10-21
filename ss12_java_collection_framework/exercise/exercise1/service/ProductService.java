@@ -1,6 +1,7 @@
 package ss12_java_collection_framework.exercise.exercise1.service;
 
 import ss12_java_collection_framework.exercise.exercise1.model.Product;
+
 import java.util.Scanner;
 
 public class ProductService {
@@ -65,11 +66,12 @@ public class ProductService {
                 System.out.println("Nhập giá tiền cần chỉnh sửa:  ");
                 Product.products.get(i).setPrice(Integer.parseInt(scanner.nextLine()));
                 check = true;
+                break;
             }
         }
-        if(!check){
+        if (!check) {
             System.out.println("Không tìm thấy id này!!!");
-        }else {
+        } else {
             displayListProduct();
         }
     }
@@ -88,9 +90,16 @@ public class ProductService {
                 check = true;
             }
         }
-        if(!check){
+        if (!check) {
             System.out.println("không tìm thấy tên sản phẩm này");
         }
+    }
+
+    public static int compare(Product product1, Product product2) {
+        if (product1.getPrice() < product2.getPrice()) {
+            return 1;
+        }
+        return -1;
     }
 
 }

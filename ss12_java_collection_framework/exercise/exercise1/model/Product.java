@@ -1,6 +1,8 @@
 package ss12_java_collection_framework.exercise.exercise1.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Product {
     private String productName;
@@ -64,6 +66,5 @@ public class Product {
         products.add(product1);
         products.add(product2);
         products.add(product3);
-
     }
 }
