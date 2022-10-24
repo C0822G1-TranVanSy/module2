@@ -2,13 +2,16 @@ package ss12_java_collection_framework.exercise.exercise1.service;
 
 import ss12_java_collection_framework.exercise.exercise1.model.Product;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
-public class ProductService {
+public class ProductService implements IProductService {
     /**
      * Phương thức thêm sản phẩm
      */
-    public static void addProduct() {
+    @Override
+    public void addProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập name: ");
         String name = scanner.nextLine();
@@ -24,7 +27,8 @@ public class ProductService {
     /**
      * Phương thức hiện thị danh sách sản phẩm
      */
-    public static void displayListProduct() {
+    @Override
+    public void displayListProduct() {
         for (int i = 0; i < Product.products.size(); i++) {
             System.out.println(Product.products.get(i));
         }
@@ -33,7 +37,8 @@ public class ProductService {
     /**
      * Phương thức xóa 1 sản phẩm theo id
      */
-    public static void removeProduct() {
+    @Override
+    public void removeProduct() {
         int deletedIndex = -1;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập id cần xóa: ");
@@ -54,7 +59,8 @@ public class ProductService {
     /**
      * Phương thức chỉnh sửa sản phẩm theo id
      */
-    public static void editProduct() {
+    @Override
+    public void editProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập id cần chỉnh sửa thông tin: ");
         int id = Integer.parseInt(scanner.nextLine());
@@ -79,7 +85,8 @@ public class ProductService {
     /**
      * Phương thức tìm kiếm sản phẩm theo tên
      */
-    public static void searchProduct() {
+    @Override
+    public void searchProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập tên Product cần tìm kiếm: ");
         String name = scanner.nextLine();
@@ -95,11 +102,29 @@ public class ProductService {
         }
     }
 
-    public static int compare(Product product1, Product product2) {
-        if (product1.getPrice() < product2.getPrice()) {
-            return 1;
-        }
-        return -1;
+    /**
+     * Phương thức sắp xếp tăng dần hoặc giảm dần
+     */
+    @Override
+    public void sort() {
+        System.out.println("1. Sắp xếp tăng dần\n" +
+                "2. Sắp xếp giảm dần.");
+        Scanner scanner = new Scanner(System.in);
+        int number;
+        do {
+            System.out.println("Nhập lựa chọn của bạn: ");
+            number = Integer.parseInt(scanner.nextLine());
+            if (number == 1) {
+                Product.products.sort(Comparator.comparing(Product::getPrice));
+                displayListProduct();
+                break;
+            } else if (number == 2) {
+                Product.products.sort(Comparator.comparing(Product::getPrice).reversed());
+                displayListProduct();
+                break;
+            } else {
+                System.out.println("Bạn đã nhập ngoài lựa chọn!!! Hãy nhập lại.");
+            }
+        } while (true);
     }
-
 }
