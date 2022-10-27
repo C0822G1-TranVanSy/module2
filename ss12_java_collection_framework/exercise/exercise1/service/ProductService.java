@@ -2,7 +2,6 @@ package ss12_java_collection_framework.exercise.exercise1.service;
 
 import ss12_java_collection_framework.exercise.exercise1.model.Product;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
