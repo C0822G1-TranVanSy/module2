@@ -31,7 +31,7 @@ public class ProductController {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Nhập lại");
+                    System.out.println("Bạn đã nhập ngoài lựa chọn. Hãy nhập lại!!");
             }
         } while (true);
     }

@@ -21,7 +21,6 @@ public class ProductService implements IProductService {
 
     @Override
     public void addProduct() throws IOException, ClassNotFoundException {
-
         FileInputStream fileInputStream = new FileInputStream("src\\ss17_serialization\\exercise\\exercise1\\data\\data.dat");
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         List<Product> products = (List<Product>) objectInputStream.readObject();
